@@ -125,8 +125,8 @@ function initTypingEffect() {
 
   const roles = [
     'Web & Desktop Developer',
+    'Guru Koding, AI & Informatika',
     'Motion Designer',
-    'Leadership Mentor',
     'Pramuka Garuda'
   ];
 
