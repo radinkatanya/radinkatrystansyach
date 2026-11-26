@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO & Identitas Halaman -->
+  <title>Radinka Trystansyach — Personal Portfolio | Web & Desktop Developer</title>
+  <meta name="description"
+    content="Personal Portfolio modern karya Radinka Trystansyach: Web & Desktop Developer, Motion Designer, dan Leadership Mentor asal Subang, Jawa Barat.">
+  <meta name="keywords"
+    content="Portfolio, Web Developer, Desktop Developer, Electron.js, Node.js, Motion Designer, Subang, Pramuka Garuda">
+  <meta name="author" content="Radinka Trystansyach">
+
+  <!-- Google Fonts: 'Plus Jakarta Sans' (Heading & Body) & 'JetBrains Mono' (Badges/Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS (via CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons (via CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Instant Theme Loader (Mencegah kedip tema saat reload) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+      document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ===================================================================
+       1. NAVBAR (STICKY GLASSMORPHISM & DUAL THEME TOGGLE)
+       =================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="mainNavbar">
+    <div class="container">
+      <!-- Brand Logo & Nama -->
+      <a class="navbar-brand" href="#home">
+        <span class="brand-icon">
+          <i class="bi bi-code-slash"></i>
+        </span>
+        <span>Portfolio<spak class="gradient-text">.dev</span></span>
+      </a>
+
+      <!-- Mobile Theme Toggle & Toggler Button -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="btn btn-theme-toggle" aria-label="Ubah Tema Gelap/Terang"
+          title="Ubah Tema Gelap/Terang">
+          <i class="bi bi-sun-fill theme-icon-sun"></i>
+          <i class="bi bi-moon-stars-fill theme-icon-moon"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Nav Links & CTA -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+        <!-- CTA "Let's Talk" & Desktop Theme Switcher -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- Tombol Switcher Mode Terang / Gelap Desktop -->
+          <button type="button" class="btn btn-theme-toggle d-none d-lg-inline-flex" id="themeToggleBtn"
+            aria-label="Ubah Tema Gelap/Terang" title="Ubah Tema Gelap/Terang">
+            <i class="bi bi-sun-fill theme-icon-sun"></i>
+            <i class="bi bi-moon-stars-fill theme-icon-moon"></i>
+          </button>
+
+          <a href="#contact" class="btn btn-gradient btn-sm">
+            <i class="bi bi-chat-dots-fill"></i>
+            <span>Let's Talk</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================================================================
+       2. HERO SECTION (ASYMMETRIC LAYOUT + DYNAMIC TYPING + CODE CARD)
+       =================================================================== -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Sisi Kiri: Headline & CTA -->
+        <div class="col-lg-7 reveal">
+          <!-- Status Badge -->
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for Collaboration</span>
+          </div>
+
+          <!-- Headline Utama -->
+          <h1 class="hero-title">
+            Halo, Saya <br>
+            <!-- Nama Lengkap -->
+            <span class="gradient-text">Radinka Trystansyach</span> 👋
+          </h1>
+
+          <!-- Sub-headline dengan Typing Effect Dinamis -->
+          <div class="hero-subtitle">
+            <span>Seorang </span>
+            <span id="typing-text" class="gradient-text-alt font-mono"></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <!-- Deskripsi Singkat -->
+          <p class="hero-description">
+            Mahasiswa & Guru asal Subang, Jawa Barat. Membangun aplikasi web dan desktop berkinerja tinggi,
+            merancang animasi visual yang memukau, serta aktif mengabdi sebagai mentor kepemimpinan generasi muda.
+          </p>
+
+          <!-- Kelompok Tombol CTA -->
+          <div class="d-flex flex-wrap gap-3 hero-cta-group">
+            <a href="#projects" class="btn btn-gradient">
+              <i class="bi bi-grid-fill"></i>
+              <span>Lihat Proyek</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline-glass">
+              <i class="bi bi-file-earmark-arrow-down-fill text-cyan"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Quick Micro Stats -->
+          <div class="row mt-5 pt-3 border-top border-secondary border-opacity-25 g-3">
+            <div class="col-4">
+              <div class="fw-bold fs-4 text-white font-mono">15+</div>
+              <div class="small card-desc">Proyek Selesai</div>
+            </div>
+            <div class="col-4">
+              <div class="fw-bold fs-4 text-white font-mono">3+ Thn</div>
+              <div class="small card-desc">Organisasi Aktif</div>
+            </div>
+            <div class="col-4">
+              <div class="fw-bold fs-4 text-white font-mono">20+</div>
+              <div class="small card-desc">Sesi Mentoring</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sisi Kanan: Interactive Code / Profile Card -->
+        <div class="col-lg-5 reveal reveal-delay-2">
+          <div class="position-relative">
+
+            <!-- Floating Micro-Interaction Badges -->
+            <div class="floating-badge floating-badge-1">
+              <i class="bi bi-lightning-charge-fill text-warning"></i>
+              <span>Real-Time Socket.IO & WebRTC</span>
+            </div>
+
+            <div class="floating-badge floating-badge-2">
+              <i class="bi bi-award-fill text-info"></i>
+              <span>Pramuka Garuda Achiever</span>
+            </div>
+
+            <!-- Kartu Editor Kode Interaktif -->
+            <div class="hero-code-card">
+              <!-- Window Bar -->
+              <div class="code-header">
+                <div class="window-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="file-tab">
+                  <i class="bi bi-file-earmark-code text-primary"></i>
+                  <span>developer.config.js</span>
+                </div>
+                <button type="button" class="btn btn-link btn-sm text-muted p-0" id="copyCodeBtn" title="Salin kode">
+                  <i class="bi bi-clipboard"></i>
+                </button>
+              </div>
+
+              <!-- Isi Baris Kode -->
+              <div class="code-body" id="heroCodeContent">
+                <pre class="m-0"><code><span class="code-comment">// Profil Pengembang & Spesialisasi</span>
+<span class="code-keyword">const</span> <span class="code-variable">developer</span> = <span class="code-bracket">{</span>
+  <span class="code-property">name</span>: <span class="code-string">"Radinka Trystansyach"</span>,
+  <span class="code-property">location</span>: <span class="code-string">"Subang, Jawa Barat"</span>,
+  <span class="code-property">roles</span>: [
+    <span class="code-string">"Full-Stack Web Dev"</span>,
+    <span class="code-string">"Desktop App Specialist"</span>,
+    <span class="code-string">"Motion Designer"</span>
+  ],
+  <span class="code-property">coreTech</span>: [
+    <span class="code-string">"Node.js"</span>, 
+    <span class="code-string">"Electron.js"</span>, 
+    <span class="code-string">"Socket.IO"</span>, 
+    <span class="code-string">"WebRTC"</span>
+  ],
+  <span class="code-property">softSkills</span>: [
+    <span class="code-string">"Leadership (LDKS/LDKO)"</span>,
+    <span class="code-string">"Public Speaking"</span>,
+    <span class="code-string">"Pramuka Garuda"</span>
+  ],
+  <span class="code-property">isAvailable</span>: <span class="code-keyword">true</span>,
+  <span class="code-property">codePhilosophy</span>: () =&gt; {
+    <span class="code-keyword">return</span> <span class="code-string">"Clean, performant &amp; impactful"</span>;
+  }
+<span class="code-bracket">}</span>;</code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       3. ABOUT ME SECTION (BENTO GRID STYLE)
+       =================================================================== -->
+  <section id="about" class="about-section">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 reveal">
+        <span class="section-subtitle">
+          <i class="bi bi-person-bounding-box"></i> TENTANG SAYA
+        </span>
+        <h2 class="section-title">
+          Mengenal Lebih Dekat <span class="gradient-text">Profil &amp; Rekam Jejak</span>
+        </h2>
+        <p class="section-desc">
+          Perpaduan seimbang antara keahlian teknis rekayasa perangkat lunak, kepekaan artistik multimedia, serta
+          dedikasi kepemimpinan berintegritas.
+        </p>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="row g-4">
+
+        <!-- Bento 1: Ringkasan Utama (Lebar: col-lg-8) -->
+        <div class="col-lg-8 reveal">
+          <div class="glass-card bento-card">
+            <div class="card-glow-bg"></div>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="avatar-badge-wrapper m-0">
+                <div class="avatar-initials">RT</div>
+              </div>
+              <div>
+                <h3 class="h4 mb-1 text-white">Mahasiswa &amp; Developer Kreatif</h3>
+                <span class="badge-tech"><i class="bi bi-geo-alt-fill text-danger"></i> Subang, Jawa Barat,
+                  Indonesia</span>
+              </div>
+            </div>
+
+            <p class="card-desc fs-6 mb-4">
+              Saya adalah mahasiswa yang berdedikasi tinggi dalam bidang pemrograman dasar, pengembangan web modern, dan
+              aplikasi desktop terdistribusi. Berasal dari Subang, saya selalu antusias memecahkan permasalahan nyata
+              melalui perangkat lunak yang efisien, aman, dan mudah digunakan.
+            </p>
+            <p class="card-desc fs-6 mb-4">
+              Selain di depan layar monitor, saya aktif menyeimbangkan logika pemrograman dengan kreativitas desain
+              gerak (motion graphics) dan pengalaman manajemen manusia melalui berbagai amanah kepemimpinan organisasi.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 mt-auto pt-2">
+              <span class="badge-tech"><i class="bi bi-check2-circle text-primary"></i> Problem Solver</span>
+              <span class="badge-tech"><i class="bi bi-code-slash text-info"></i> Modern Architecture</span>
+              <span class="badge-tech"><i class="bi bi-people-fill text-success"></i> Team Leadership</span>
+              <span class="badge-tech"><i class="bi bi-lightning-charge text-warning"></i> Fast Learner</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 2: Statistik Cepat (Lebar: col-lg-4) -->
+        <div class="col-lg-4 reveal reveal-delay-1">
+          <div class="glass-card bento-card justify-content-between">
+            <div class="card-glow-bg"></div>
+            <div class="bento-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+
+            <h4 class="h5 text-white mb-3">Statistik &amp; Capaian</h4>
+
+            <div class="row g-3 my-auto">
+              <div class="col-6">
+                <div class="bento-stat-box">
+                  <div class="bento-highlight font-mono gradient-text">15+</div>
+                  <div class="bento-highlight-label">Karya Proyek</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bento-stat-box">
+                  <div class="bento-highlight font-mono gradient-text">3+</div>
+                  <div class="bento-highlight-label">Tahun Organisasi</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bento-stat-box">
+                  <div class="bento-highlight font-mono gradient-text">20+</div>
+                  <div class="bento-highlight-label">Sesi Mentor</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bento-stat-box">
+                  <div class="bento-highlight font-mono gradient-text">100%</div>
+                  <div class="bento-highlight-label">Komitmen Kerja</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 small card-desc">
+              <i class="bi bi-check-all text-warning me-1"></i> Terus bertumbuh setiap harinya
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Pengalaman Organisasi (Lebar: col-lg-4) -->
+        <div class="col-lg-4 reveal">
+          <div class="glass-card bento-card">
+            <div class="card-glow-bg"></div>
+            <div class="bento-icon">
+              <i class="bi bi-diagram-3-fill"></i>
+            </div>
+            <h4 class="h5 text-white mb-2">Pengalaman Organisasi</h4>
+            <span class="badge-tech w-fit mb-3">Aktif Sejak 2022</span>
+            <p class="card-desc small mb-0">
+              Berpengalaman memimpin divisi teknologi informasi dan tim publikasi. Terbiasa menyusun timeline kerja tim,
+              menyelaraskan target antardivisi, serta menyelesaikan konflik dengan pendekatan komunikasi persuasif.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 4: Pemateri & Mentor Kepemimpinan (Lebar: col-lg-4) -->
+        <div class="col-lg-4 reveal reveal-delay-1">
+          <div class="glass-card bento-card">
+            <div class="card-glow-bg"></div>
+            <div class="bento-icon">
+              <i class="bi bi-megaphone-fill"></i>
+            </div>
+            <h4 class="h5 text-white mb-2">Pemateri &amp; Mentor LDKS/LDKO</h4>
+            <span class="badge-tech w-fit mb-3">Fasilitator Publik</span>
+            <p class="card-desc small mb-0">
+              Sering diundang sebagai narasumber Latihan Dasar Kepemimpinan Siswa/Organisasi. Menyampaikan materi
+              manajemen waktu, etika komunikasi digital, dinamika kelompok, serta problem-solving berbasis kepemimpinan
+              solutif.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 5: Pramuka Garuda (Lebar: col-lg-4) -->
+        <div class="col-lg-4 reveal reveal-delay-2">
+          <div class="glass-card bento-card">
+            <div class="card-glow-bg"></div>
+            <div class="bento-icon">
+              <i class="bi bi-patch-check-fill"></i>
+            </div>
+            <h4 class="h5 text-white mb-2">Pramuka Garuda</h4>
+            <span class="badge-tech w-fit mb-3">Tingkatan Tertinggi</span>
+            <p class="card-desc small mb-0">
+              Pencapaian kehormatan tertinggi dalam Gerakan Pramuka. Membentuk fondasi karakter disiplin baja,
+              integritas moral, kepedulian sosial tinggi, dan kesiapan berkontribusi penuh bagi masyarakat luas.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       4. SKILLS & TECH STACK SECTION
+       =================================================================== -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 reveal">
+        <span class="section-subtitle">
+          <i class="bi bi-cpu-fill"></i> KEAHLIAN &amp; TOOLBOX
+        </span>
+        <h2 class="section-title">
+          Keahlian Teknis &amp; <span class="gradient-text">Kreativitas Multimedia</span>
+        </h2>
+        <p class="section-desc">
+          Teknologi dan perangkat lunak yang saya gunakan untuk mewujudkan solusi digital modern dari konsep awal hingga
+          produk siap produksi.
+        </p>
+
+        <!-- Nav Pills Interaktif Bootstrap -->
+        <div class="mt-4">
+          <ul class="nav nav-pills nav-pills-custom justify-content-center" id="skillsTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="tab-dev-btn" data-bs-toggle="pill" data-bs-target="#tab-dev"
+                type="button" role="tab" aria-controls="tab-dev" aria-selected="true">
+                <i class="bi bi-code-square me-2"></i> Web &amp; Desktop Dev
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-creative-btn" data-bs-toggle="pill" data-bs-target="#tab-creative"
+                type="button" role="tab" aria-controls="tab-creative" aria-selected="false">
+                <i class="bi bi-brush-fill me-2"></i> Creative &amp; Multimedia
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-leadership-btn" data-bs-toggle="pill" data-bs-target="#tab-leadership"
+                type="button" role="tab" aria-controls="tab-leadership" aria-selected="false">
+                <i class="bi bi-award-fill me-2"></i> Leadership &amp; Soft Skills
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="skillsTabContent">
+
+        <!-- Tab 1: Web & Desktop Development -->
+        <div class="tab-pane fade show active" id="tab-dev" role="tabpanel" aria-labelledby="tab-dev-btn">
+          <div class="row g-3">
+
+            <!-- Skill Items -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-filetype-html"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">HTML5 Semantic</h5>
+                  <span class="skill-level">Struktur Web Modern &amp; Aksesibilitas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-filetype-css"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">CSS3 &amp; Flexbox/Grid</h5>
+                  <span class="skill-level">Animasi, Glassmorphism, Responsive</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-bootstrap-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Bootstrap 5</h5>
+                  <span class="skill-level">Custom Theming &amp; UI Components</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-filetype-js"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">JavaScript (ES6+)</h5>
+                  <span class="skill-level">DOM Manipulation, Async/Await, Events</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-hdd-network-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Node.js Environment</h5>
+                  <span class="skill-level">REST API, Server Runtime, NPM</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-window-desktop"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Electron.js Framework</h5>
+                  <span class="skill-level">Aplikasi Desktop Multi-Platform</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-broadcast-pin"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Socket.IO &amp; WebRTC</h5>
+                  <span class="skill-level">Komunikasi Data Real-Time &amp; Video Stream</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-database-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">SQL &amp; Database</h5>
+                  <span class="skill-level">Relasional, Query &amp; Desain Skema</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-git"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Git &amp; GitHub</h5>
+                  <span class="skill-level">Version Control, Branching, Kolaborasi</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 2: Creative & Multimedia -->
+        <div class="tab-pane fade" id="tab-creative" role="tabpanel" aria-labelledby="tab-creative-btn">
+          <div class="row g-3">
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-camera-reels-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Adobe After Effects</h5>
+                  <span class="skill-level">Motion Graphics, Animasi Logo Vektor</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-film"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Alight Motion</h5>
+                  <span class="skill-level">Mobile Keyframe Animation &amp; VFX</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-scissors"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">CapCut Video Studio</h5>
+                  <span class="skill-level">Editing Video Dokumentasi &amp; Konten Sosmed</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-layout-text-window-reverse"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">UI/UX Wireframing</h5>
+                  <span class="skill-level">Figma, Design Thinking, User Flow</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-palette-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Brand Identity Design</h5>
+                  <span class="skill-level">Harmoni Warna, Tipografi, Asset Vektor</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-soundwave"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Audio &amp; SFX Timing</h5>
+                  <span class="skill-level">Sinkronisasi Audio dengan Ritme Visual</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 3: Leadership & Soft Skills -->
+        <div class="tab-pane fade" id="tab-leadership" role="tabpanel" aria-labelledby="tab-leadership-btn">
+          <div class="row g-3">
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-mic-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Public Speaking &amp; Training</h5>
+                  <span class="skill-level">Pemateri Workshop, Presentasi Efektif</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-diagram-2-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Team Leadership</h5>
+                  <span class="skill-level">Manajemen Divisi, Delegasi, Evaluasi</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-compass-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Mentoring &amp; Coaching</h5>
+                  <span class="skill-level">Fasilitator Kaderisasi Siswa &amp; LDKS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Karakter Pramuka Garuda</h5>
+                  <span class="skill-level">Kedisiplinan Tinggi, Loyalitas, Integritas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-chat-heart-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Komunikasi Interpersonal</h5>
+                  <span class="skill-level">Negosiasi, Diplomasi, Resolusi Konflik</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <i class="bi bi-calendar-check-fill"></i>
+                </div>
+                <div>
+                  <h5 class="skill-title">Manajemen Waktu &amp; Acara</h5>
+                  <span class="skill-level">Eksekusi Program Kerja Skala Institusi</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       5. FEATURED PROJECTS SECTION (FILTER & BOOTSTRAP MODALS)
+       =================================================================== -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 reveal">
+        <span class="section-subtitle">
+          <i class="bi bi-folder-fill"></i> PORTOFOLIO KARYA
+        </span>
+        <h2 class="section-title">
+          Proyek Unggulan <span class="gradient-text">Pilihan</span>
+        </h2>
+        <p class="section-desc">
+          Eksplorasi karya nyata dalam bentuk perangkat lunak desktop fungsional, platform web interaktif, dan materi
+          animasi visual berkualitas tinggi.
+        </p>
+
+        <!-- Filter Kategori Tombol -->
+        <div class="d-flex justify-content-center gap-2 mt-4 flex-wrap">
+          <button type="button" class="project-filter-btn active" data-filter="all">Semua Proyek</button>
+          <button type="button" class="project-filter-btn" data-filter="software">Software &amp; Web</button>
+          <button type="button" class="project-filter-btn" data-filter="multimedia">Multimedia &amp; Motion</button>
+        </div>
+      </div>
+
+      <!-- Grid Daftar Proyek -->
+      <div class="row g-4" id="projectsContainer">
+
+        <!-- PROYEK 1: RMM Lab Komputer (Software/Desktop) -->
+        <div class="col-lg-4 col-md-6 project-item reveal" data-category="software">
+          <div class="glass-card project-card">
+
+            <!-- Thumbnail Visual Vector Mockup -->
+            <div class="project-thumb">
+              <div class="project-badge-corner">Desktop &amp; Real-Time</div>
+              <div class="project-mockup-canvas project-mockup-1">
+                <!-- SVG UI Illustration Mockup -->
+                <svg width="220" height="130" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect class="svg-mockup-window" x="10" y="10" width="200" height="110" rx="8" fill="#18181B"
+                    stroke="#27272A" stroke-width="1.5" />
+                  <!-- Header bar -->
+                  <rect class="svg-mockup-header" x="10" y="10" width="200" height="20" rx="8" fill="#121215" />
+                  <circle cx="22" cy="20" r="3" fill="#EF4444" />
+                  <circle cx="32" cy="20" r="3" fill="#F59E0B" />
+                  <circle cx="42" cy="20" r="3" fill="#10B981" />
+                  <rect x="65" y="17" width="90" height="6" rx="3" fill="#3F3F46" />
+                  <!-- Monitor grid boxes -->
+                  <rect class="svg-mockup-card" x="25" y="40" width="45" height="30" rx="4" fill="#121215"
+                    stroke="#27272A" stroke-width="1" />
+                  <rect class="svg-mockup-card" x="85" y="40" width="45" height="30" rx="4" fill="#121215"
+                    stroke="#27272A" stroke-width="1" />
+                  <rect class="svg-mockup-card" x="145" y="40" width="45" height="30" rx="4" fill="#121215"
+                    stroke="#27272A" stroke-width="1" />
+                  <!-- Pulse dot in screen 1 -->
+                  <circle cx="35" cy="50" r="2.5" fill="#F59E0B" />
+                  <circle cx="95" cy="50" r="2.5" fill="#F59E0B" />
+                  <circle cx="155" cy="50" r="2.5" fill="#EF4444" />
+                  <!-- Stats footer -->
+                  <rect class="svg-mockup-footer" x="25" y="85" width="165" height="18" rx="4" fill="#121215"
+                    stroke="#27272A" />
+                  <text class="svg-mockup-text" x="35" y="98" fill="#FBBF24" font-size="8" font-family="monospace">● 32
+                    Clients Online | Low Latency</text>
+                </svg>
+              </div>
+              <div class="project-overlay"></div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="project-body">
+              <h3 class="project-title">RMM Lab Komputer</h3>
+              <p class="project-desc">
+                Aplikasi desktop Real-Time Remote Monitoring &amp; Management untuk laboratorium komputer. Memantau
+                layar puluhan client sekaligus, eksekusi command massal, dan lock workstation dengan latensi sangat
+                rendah.
+              </p>
+
+              <div class="project-tags">
+                <span class="badge-tech">Electron.js</span>
+                <span class="badge-tech">Node.js</span>
+                <span class="badge-tech">Socket.IO</span>
+                <span class="badge-tech">WebRTC</span>
+              </div>
+
+              <!-- Button Pemicu Modal -->
+              <button type="button" class="btn btn-outline-glass w-100 justify-content-center mt-auto"
+                data-bs-toggle="modal" data-bs-target="#modalRMM">
+                <i class="bi bi-info-circle-fill text-info"></i>
+                <span>Detail Proyek</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROYEK 2: NexShop E-Commerce (Software/Web) -->
+        <div class="col-lg-4 col-md-6 project-item reveal reveal-delay-1" data-category="software">
+          <div class="glass-card project-card">
+
+            <!-- Thumbnail Visual Vector Mockup -->
+            <div class="project-thumb">
+              <div class="project-badge-corner">Web Platform</div>
+              <div class="project-mockup-canvas project-mockup-2">
+                <!-- SVG UI Illustration Mockup -->
+                <svg width="220" height="130" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect class="svg-mockup-window" x="10" y="10" width="200" height="110" rx="8" fill="#18181B"
+                    stroke="#27272A" stroke-width="1.5" />
+                  <!-- Header nav -->
+                  <rect class="svg-mockup-header" x="10" y="10" width="200" height="22" rx="8" fill="#121215" />
+                  <rect x="25" y="17" width="40" height="8" rx="2" fill="#F59E0B" />
+                  <rect x="150" y="16" width="45" height="10" rx="5" fill="#D97706" />
+                  <!-- Banner hero -->
+                  <rect x="25" y="40" width="170" height="32" rx="6" fill="url(#nexshop-grad)" />
+                  <defs>
+                    <linearGradient id="nexshop-grad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#FBBF24" />
+                      <stop offset="100%" stop-color="#D97706" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Catalog items -->
+                  <rect class="svg-mockup-card" x="25" y="80" width="50" height="28" rx="4" fill="#121215"
+                    stroke="#27272A" />
+                  <rect class="svg-mockup-card" x="85" y="80" width="50" height="28" rx="4" fill="#121215"
+                    stroke="#27272A" />
+                  <rect class="svg-mockup-card" x="145" y="80" width="50" height="28" rx="4" fill="#121215"
+                    stroke="#27272A" />
+                </svg>
+              </div>
+              <div class="project-overlay"></div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="project-body">
+              <h3 class="project-title">NexShop E-Commerce</h3>
+              <p class="project-desc">
+                Platform website toko online modern dengan tata letak adaptif dan responsif. Dilengkapi katalog
+                interaktif, filter multi-kategori instan, checkout drawer, serta sinkronisasi keranjang belanja dinamis.
+              </p>
+
+              <div class="project-tags">
+                <span class="badge-tech">Bootstrap 5</span>
+                <span class="badge-tech">JavaScript ES6</span>
+                <span class="badge-tech">REST API</span>
+                <span class="badge-tech">LocalStorage</span>
+              </div>
+
+              <!-- Button Pemicu Modal -->
+              <button type="button" class="btn btn-outline-glass w-100 justify-content-center mt-auto"
+                data-bs-toggle="modal" data-bs-target="#modalNexShop">
+                <i class="bi bi-info-circle-fill text-info"></i>
+                <span>Detail Proyek</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PROYEK 3: Motion Graphics & Visual Recap (Multimedia) -->
+        <div class="col-lg-4 col-md-6 project-item reveal reveal-delay-2" data-category="multimedia">
+          <div class="glass-card project-card">
+
+            <!-- Thumbnail Visual Vector Mockup -->
+            <div class="project-thumb">
+              <div class="project-badge-corner">Creative &amp; Motion</div>
+              <div class="project-mockup-canvas project-mockup-3">
+                <!-- SVG UI Illustration Mockup -->
+                <svg width="220" height="130" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect class="svg-mockup-window" x="10" y="10" width="200" height="110" rx="8" fill="#18181B"
+                    stroke="#27272A" stroke-width="1.5" />
+                  <!-- Video canvas -->
+                  <circle cx="110" cy="55" r="26" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B"
+                    stroke-dasharray="3 3" />
+                  <polygon points="104,45 122,55 104,65" fill="#F59E0B" />
+                  <!-- Audio waveform timeline -->
+                  <rect class="svg-mockup-footer" x="25" y="92" width="170" height="18" rx="4" fill="#121215" />
+                  <line x1="35" y1="101" x2="35" y2="101" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" />
+                  <line x1="45" y1="96" x2="45" y2="106" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" />
+                  <line x1="55" y1="94" x2="55" y2="108" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+                  <line x1="65" y1="97" x2="65" y2="105" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+                  <line x1="75" y1="95" x2="75" y2="107" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" />
+                  <line x1="85" y1="98" x2="85" y2="104" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" />
+                  <line x1="95" y1="93" x2="95" y2="109" stroke="#D97706" stroke-width="3" stroke-linecap="round" />
+                  <line x1="105" y1="96" x2="105" y2="106" stroke="#D97706" stroke-width="3" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="project-overlay"></div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="project-body">
+              <h3 class="project-title">Motion Graphics &amp; Recap</h3>
+              <p class="project-desc">
+                Rangkaian karya animasi identitas logo, bumper video organisasi, dan dokumentasi sinematik kegiatan.
+                Menggabungkan transisi mulus, grafis vektor dinamis, dan sinkronisasi audio berirama kuat.
+              </p>
+
+              <div class="project-tags">
+                <span class="badge-tech">After Effects</span>
+                <span class="badge-tech">Alight Motion</span>
+                <span class="badge-tech">CapCut Studio</span>
+                <span class="badge-tech">Vector Art</span>
+              </div>
+
+              <!-- Button Pemicu Modal -->
+              <button type="button" class="btn btn-outline-glass w-100 justify-content-center mt-auto"
+                data-bs-toggle="modal" data-bs-target="#modalMotion">
+                <i class="bi bi-info-circle-fill text-info"></i>
+                <span>Detail Proyek</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       MODAL 1: DETAIL RMM LAB KOMPUTER
+       =================================================================== -->
+  <div class="modal fade modal-custom" id="modalRMM" tabindex="-1" aria-labelledby="modalRMMLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge-tech mb-2 text-info">Software / Desktop Application</span>
+            <h4 class="modal-title h5 text-white" id="modalRMMLabel">RMM Lab Komputer — Real-Time Remote Monitoring</h4>
+          </div>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-desc">
+            Sistem RMM (Remote Monitoring &amp; Management) ini dirancang untuk mengatasi kendala instruktur lab
+            komputer sekolah maupun kampus dalam mengawasi puluhan komputer siswa secara terpusat tanpa hambatan
+            latensi.
+          </p>
+
+          <h5 class="h6 text-white mt-4 mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Fitur Unggulan
+            Sistem:</h5>
+          <ul class="feature-check-list">
+            <li><strong>Live Grid Screen Broadcast:</strong> Menampilkan siaran langsung layar hingga 40+ client secara
+              bersamaan via WebRTC peer connection.</li>
+            <li><strong>Remote Lock &amp; Focus Mode:</strong> Mengunci input keyboard dan mouse siswa saat sesi
+              penjelasan materi berlangsung.</li>
+            <li><strong>Broadcast Message &amp; Assets:</strong> Mengirimkan pengumuman serentak atau distribusi file
+              materi secara instan.</li>
+            <li><strong>Remote Terminal Command:</strong> Menjalankan script diagnostik atau restart/shutdown massal
+              dari workstation server.</li>
+            <li><strong>Audit Aktivitas Real-Time:</strong> Pencatatan riwayat aplikasi aktif dan koneksi client
+              berbasis Socket.IO event handler.</li>
+          </ul>
+
+          <h5 class="h6 text-white mt-4 mb-2"><i class="bi bi-code-slash text-info me-2"></i>Teknologi &amp; Arsitektur:
+          </h5>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge-tech">Electron.js (Host &amp; Client GUI)</span>
+            <span class="badge-tech">Node.js (Backend Engine)</span>
+            <span class="badge-tech">Socket.IO (Signaling &amp; RPC)</span>
+            <span class="badge-tech">WebRTC (Low-Latency Video Stream)</span>
+            <span class="badge-tech">SQLite (Local Logs)</span>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <span class="font-mono small text-muted">Status: Production Ready</span>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-glass btn-sm" data-bs-dismiss="modal">Tutup</button>
+            <a href="#contact" class="btn btn-gradient btn-sm" data-bs-dismiss="modal">Diskusi Proyek Ini</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 2: DETAIL NEXSHOP E-COMMERCE
+       =================================================================== -->
+  <div class="modal fade modal-custom" id="modalNexShop" tabindex="-1" aria-labelledby="modalNexShopLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge-tech mb-2 text-primary">Web Application &amp; Frontend</span>
+            <h4 class="modal-title h5 text-white" id="modalNexShopLabel">NexShop — Platform E-Commerce Modern</h4>
+          </div>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-desc">
+            NexShop menghadirkan pengalaman belanja online yang responsif, cepat, dan intuitif. Dibangun dengan
+            pendekatan antarmuka modern yang memadukan Bootstrap 5 kustom dan JavaScript murni untuk fluiditas interaksi
+            maksimal.
+          </p>
+
+          <h5 class="h6 text-white mt-4 mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Fitur Utama
+            Platform:</h5>
+          <ul class="feature-check-list">
+            <li><strong>Katalog Dinamis &amp; Filter Instan:</strong> Penyaringan produk berdasarkan harga, kategori,
+              dan rating tanpa me-reload halaman.</li>
+            <li><strong>Keranjang Belanja Interaktif (Offcanvas):</strong> Mengatur kuantitas item, kalkulasi otomatis
+              diskon &amp; ongkir secara real-time.</li>
+            <li><strong>Penyimpanan Sesi (LocalStorage):</strong> State keranjang tetap tersimpan aman saat pengguna
+              menutup atau me-refresh browser.</li>
+            <li><strong>Checkout Multi-Langkah Responsif:</strong> Form pemesanan terintegrasi dengan validasi input
+              yang ketat dan ramah pengguna.</li>
+            <li><strong>Desain Mobile-First 100%:</strong> Tampilan dioptimalkan untuk navigasi satu tangan di layar
+              smartphone.</li>
+          </ul>
+
+          <h5 class="h6 text-white mt-4 mb-2"><i class="bi bi-code-slash text-info me-2"></i>Teknologi yang Digunakan:
+          </h5>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge-tech">HTML5 Semantic</span>
+            <span class="badge-tech">Bootstrap 5 Components</span>
+            <span class="badge-tech">Vanilla JavaScript (ES6 Modules)</span>
+            <span class="badge-tech">REST API Integration</span>
+            <span class="badge-tech">CSS Custom Variables</span>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <span class="font-mono small text-muted">Status: Live Demo &amp; Code Open</span>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-glass btn-sm" data-bs-dismiss="modal">Tutup</button>
+            <a href="#contact" class="btn btn-gradient btn-sm" data-bs-dismiss="modal">Konsultasi Desain</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 3: DETAIL MOTION GRAPHICS & RECAP
+       =================================================================== -->
+  <div class="modal fade modal-custom" id="modalMotion" tabindex="-1" aria-labelledby="modalMotionLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge-tech mb-2 text-danger">Creative / Motion Graphics</span>
+            <h4 class="modal-title h5 text-white" id="modalMotionLabel">Motion Graphics &amp; Visual Recap Showcase</h4>
+          </div>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-desc">
+            Showcase komprehensif karya multimedia kreatif berupa animasi grafis vektor, intro logo dinamis untuk acara
+            resmi, serta video after-movie dokumentasi kegiatan berskala ratusan peserta.
+          </p>
+
+          <h5 class="h6 text-white mt-4 mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Cakupan
+            Portofolio Kreatif:</h5>
+          <ul class="feature-check-list">
+            <li><strong>Identitas Animasi Logo:</strong> Perancangan transisi vektor kinetik beresolusi 4K dengan grafis
+              kurva halus di After Effects.</li>
+            <li><strong>Video Recap Dokumentasi:</strong> Pengeditan ritmis dengan teknik pacing dinamis, color grading
+              sinematik, dan sound design imersif.</li>
+            <li><strong>Bumper &amp; Lower Thirds:</strong> Template visual motion siap pakai untuk kebutuhan live
+              streaming seminar dan workshop organisasi.</li>
+            <li><strong>Konten Sosmed Vertikal:</strong> Format 9:16 yang dioptimalkan untuk reels dan short-form video
+              dengan retensi tinggi.</li>
+          </ul>
+
+          <h5 class="h6 text-white mt-4 mb-2"><i class="bi bi-brush-fill text-danger me-2"></i>Software &amp; Toolset:
+          </h5>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge-tech">Adobe After Effects</span>
+            <span class="badge-tech">Alight Motion Pro</span>
+            <span class="badge-tech">CapCut Studio</span>
+            <span class="badge-tech">Adobe Illustrator (Vector Assets)</span>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <span class="font-mono small text-muted">Status: Active Creative Projects</span>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-glass btn-sm" data-bs-dismiss="modal">Tutup</button>
+            <a href="#contact" class="btn btn-gradient btn-sm" data-bs-dismiss="modal">Pesan Video Motion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       6. EXPERIENCE & MILESTONES (VERTICAL TIMELINE)
+       =================================================================== -->
+  <section id="experience" class="experience-section">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 reveal">
+        <span class="section-subtitle">
+          <i class="bi bi-clock-history"></i> REKAM JEJAK
+        </span>
+        <h2 class="section-title">
+          Pengalaman &amp; <span class="gradient-text">Milestones Penting</span>
+        </h2>
+        <p class="section-desc">
+          Perjalanan konsisten dalam mengasah kepemimpinan tim, berbagi wawasan di forum publik, serta pencapaian
+          penghargaan kehormatan tertinggi.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline Component -->
+      <div class="timeline-wrapper">
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-bullet"></div>
+          <div class="glass-card timeline-card">
+            <span class="timeline-period">2024 — Sekarang</span>
+            <h3 class="timeline-title">Senior Leadership Mentor &amp; Narasumber Workshop</h3>
+            <div class="timeline-subtitle">Forum Pemuda &amp; Institusi Pendidikan</div>
+            <p class="timeline-desc">
+              Dipercaya membawakan materi pelatihan mengenai manajemen waktu, strategi komunikasi publik yang efektif,
+              serta digital branding untuk calon pemimpin muda. Mengembangkan kurikulum interaktif dengan metode studi
+              kasus langsung.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-bullet"></div>
+          <div class="glass-card timeline-card">
+            <span class="timeline-period">2023 — 2024</span>
+            <h3 class="timeline-title">Pemateri &amp; Fasilitator LDKS / LDKO</h3>
+            <div class="timeline-subtitle">Latihan Dasar Kepemimpinan Siswa &amp; Mahasiswa</div>
+            <p class="timeline-desc">
+              Membimbing ratusan peserta dalam pembentukan karakter, kedisiplinan berorganisasi, serta pemecahan masalah
+              kritis dalam kelompok. Menanamkan nilai empati, ketegasan, dan tanggung jawab amanah.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-bullet"></div>
+          <div class="glass-card timeline-card">
+            <span class="timeline-period">2022 — Sekarang</span>
+            <h3 class="timeline-title">Pengurus &amp; Koordinator Divisi Organisasi</h3>
+            <div class="timeline-subtitle">Bidang Teknologi Informasi, Media &amp; Komunikasi</div>
+            <p class="timeline-desc">
+              Memimpin koordinasi publikasi digital, manajemen aset multimedia, dan pengelolaan infrastruktur teknologi
+              kegiatan. Sukses mengorkestrasi berbagai program kerja besar dengan tingkat kepuasan partisipan yang
+              tinggi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 (Pencapaian Khusus) -->
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-bullet" style="border-color: #F59E0B;"></div>
+          <div class="glass-card timeline-card" style="border-color: rgba(245, 158, 11, 0.4);">
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <i class="bi bi-award-fill text-warning fs-5"></i>
+              <span class="timeline-period text-warning m-0">Penghargaan Kehormatan Khusus</span>
+            </div>
+            <h3 class="timeline-title">Penganugerahan Pramuka Garuda</h3>
+            <div class="timeline-subtitle text-warning-emphasis">Kwartir Cabang Gerakan Pramuka</div>
+            <p class="timeline-desc">
+              Meraih tingkatan tertinggi Pramuka Garuda melalui evaluasi ketat mencakup kecakapan hidup, keteladanan
+              budi pekerti, kepemimpinan lapangan, dan loyalitas pengabdian masyarakat. Bukti nyata integritas dan
+              disiplin diri yang teguh.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       7. CONTACT SECTION & FOOTER
+       =================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 reveal">
+        <span class="section-subtitle">
+          <i class="bi bi-envelope-at-fill"></i> HUBUNGI SAYA
+        </span>
+        <h2 class="section-title">
+          Mari Memulai <span class="gradient-text">Kolaborasi Hebat</span>
+        </h2>
+        <p class="section-desc">
+          Tertarik mengembangkan proyek bersama, mengundang sebagai narasumber/mentor, atau ingin bertukar gagasan
+          seputar teknologi? Jangan ragu untuk mengirimkan pesan.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Kolom Kiri: Info Kontak & Sosial Media -->
+        <div class="col-lg-5 reveal">
+          <div class="glass-card p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="h4 text-white mb-2">Informasi Kontak</h3>
+              <p class="card-desc small mb-4">
+                Saya selalu terbuka untuk diskusi teknologi baru, peluang kolaborasi software, maupun undangan sesi
+                kepemimpinan.
+              </p>
+
+              <!-- Kontak Item 1: Lokasi -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <div class="small card-desc">Domisili / Lokasi</div>
+                  <div class="fw-semibold text-white">Subang, Jawa Barat, Indonesia</div>
+                </div>
+              </div>
+
+              <!-- Kontak Item 2: Email -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                  <div class="small card-desc">Alamat Email Resmi</div>
+                  <div class="fw-semibold text-white">kontak.developer@email.com</div>
+                </div>
+              </div>
+
+              <!-- Kontak Item 3: Status Kerja -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <div>
+                  <div class="small card-desc">Ketersediaan Kolaborasi</div>
+                  <div class="fw-semibold text-white">Terbuka (Remote / On-site Hybrid)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tautan Media Sosial -->
+            <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
+              <div class="small card-desc mb-3">Terhubung di Media Sosial:</div>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                  title="GitHub">
+                  <i class="bi bi-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                  title="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                  title="Instagram">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                  title="YouTube">
+                  <i class="bi bi-youtube"></i>
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                  title="WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Form Kontak Interaktif -->
+        <div class="col-lg-7 reveal reveal-delay-1">
+          <div class="glass-card p-4 p-md-5 h-100">
+            <h3 class="h4 text-white mb-2">Kirim Pesan Langsung</h3>
+            <p class="card-desc small mb-4">
+              Silakan isi formulir di bawah ini. Pesan Anda akan langsung masuk ke kotak masuk prioritas saya.
+            </p>
+
+            <!-- Wadah Notifikasi Alert Bootstrap (Dikelola oleh main.js) -->
+            <div id="formAlertContainer"></div>
+
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+
+                <!-- Input Nama -->
+                <div class="col-md-6">
+                  <label for="senderName" class="form-label-custom">Nama Lengkap <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-custom" id="senderName"
+                    placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <!-- Input Email -->
+                <div class="col-md-6">
+                  <label for="senderEmail" class="form-label-custom">Alamat Email <span
+                      class="text-danger">*</span></label>
+                  <input type="email" class="form-control form-control-custom" id="senderEmail"
+                    placeholder="nama@email.com" required>
+                </div>
+
+                <!-- Pilihan Kategori / Subjek -->
+                <div class="col-12">
+                  <label for="senderSubject" class="form-label-custom">Kategori / Topik Keperluan</label>
+                  <select class="form-select form-control-custom" id="senderSubject">
+                    <option value="Proyek Web / Desktop" selected>Pengembangan Aplikasi Web / Desktop</option>
+                    <option value="Undangan Pembicara / Mentor">Undangan Narasumber / Mentor LDKS</option>
+                    <option value="Proyek Motion Graphics">Kebutuhan Motion Graphics &amp; Video</option>
+                    <option value="Diskusi & Kolaborasi Umum">Diskusi &amp; Kolaborasi Umum</option>
+                  </select>
+                </div>
+
+                <!-- Textarea Pesan -->
+                <div class="col-12">
+                  <label for="senderMessage" class="form-label-custom">Isi Pesan <span
+                      class="text-danger">*</span></label>
+                  <textarea class="form-control form-control-custom" id="senderMessage" rows="5"
+                    placeholder="Tuliskan pesan, rincian proyek, atau pertanyaan Anda di sini..." required></textarea>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn btn-gradient w-100 justify-content-center" id="submitBtn">
+                    <i class="bi bi-send-fill"></i>
+                    <span>Kirim Pesan Sekarang</span>
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       8. FOOTER
+       =================================================================== -->
+  <footer class="footer-custom">
+    <div class="container text-center">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+
+        <!-- Brand & Hak Cipta -->
+        <div class="text-muted small">
+          &copy; <span id="currentYear">2026</span> <strong class="text-white">Radinka Trystansyach</strong>. Seluruh
+          Hak Cipta
+          Dilindungi.
+        </div>
+
+        <!-- Tech Stack Badge Footer -->
+        <div class="small text-muted">
+          Dibuat dengan <i class="bi bi-heart-fill text-danger mx-1"></i> menggunakan
+          <span class="text-cyan">Bootstrap 5</span>, <span class="text-primary">Custom CSS</span> &amp; <span
+            class="text-warning">Vanilla JS</span>.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="btn-back-to-top" id="backToTopBtn" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ===================================================================
+       9. SCRIPTS
+       =================================================================== -->
+  <!-- Bootstrap 5 Bundle JS (termasuk Popper) via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom Cursor Follower Elements (Trailing Ring + Center Dot) -->
+  <div class="cursor-dot cursor-hidden"></div>
+  <div class="cursor-outline cursor-hidden"></div>
+</body>
+
+</html>
