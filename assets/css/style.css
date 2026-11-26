@@ -1718,10 +1718,10 @@ h6 {
   z-index: 99998;
   transform: translate(-50%, -50%);
   transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.25s ease,
-              border-color 0.25s ease,
-              opacity 0.2s ease;
+    height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.2s ease;
   will-change: transform, width, height;
 }
 
